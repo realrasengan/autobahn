@@ -17,6 +17,13 @@ Example:
 bash ~/path/to/autobahn.sh
 ```
 
+You can also set the max # of stories to display (defaults at 10).  For example, this will
+limit it to 5:
+```
+bash ~/path/to/autobahn.sh 5
+```
+
+
 Then type `source .bashrc`
 
 ### Sample Output
