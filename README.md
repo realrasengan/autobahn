@@ -46,7 +46,8 @@ Get all news at https://news.ycombinator.com/
 Remove from .bashrc
 
 ### Alternate Implementations
-hn.ps1 - in MS Powershell by gabrielsroka
+hn.ps1 - in MS Powershell by [gabrielsroka](https://github.com/gabrielsroka)
 
 ### License
 Copyright (c) 2019 Andrew Lee (MIT License)
+Copyright (c) 2019 github.com/realrasengan/autobahn Contributors (MIT License)
