@@ -9,7 +9,7 @@
 TOTAL_ITEMS=25
 
 # Get HN API Top Stories
-HN_ITEMS_FP=`curl -s https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty`
+HN_ITEMS_FP=`curl -H 'Cache-Control: no-cache' -s https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty`
 
 # Loop through top TOTAL_ITEMS stories
 COUNTER="1"
@@ -17,7 +17,7 @@ while [ $COUNTER -le $TOTAL_ITEMS ]
 do
   # Get current item json
   HN_ITEMS_CURRENT=`echo $HN_ITEMS_FP | jq ".[]" | tr '\n' ' ' | awk -v COUNTER="$COUNTER" '{print $COUNTER}'`
-  HN_ITEMS_CURRENT_DATA=`curl -s https://hacker-news.firebaseio.com/v0/item/$HN_ITEMS_CURRENT.json?print=pretty`
+  HN_ITEMS_CURRENT_DATA=`curl -H 'Cache-Control: no-cache' -s https://hacker-news.firebaseio.com/v0/item/$HN_ITEMS_CURRENT.json?print=pretty`
 
   # Parse current item json
   HN_ITEMS_CURRENT_DATA_TITLE=`echo $HN_ITEMS_CURRENT_DATA | jq '.title' | sed -e 's/^\"//' -e 's/\"$//'`
