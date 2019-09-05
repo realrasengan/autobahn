@@ -28,16 +28,16 @@ Then type `source .bashrc`
 
 ### Sample Output
 ```
-01) ESP32/ESP8266 Wi-Fi Attacks <https://github.com/Matheus-Garbelini/esp32_esp8266_attacks>
-    Discussion: <https://news.ycombinator.com/item?id=20867758> | Poster: gioscarab | Score: 261
-02) Go 1.13 Release Notes <https://golang.org/doc/go1.13>
-    Discussion: <https://news.ycombinator.com/item?id=20869324> | Poster: 0xmohit | Score: 118
-03) Mozilla’s Manifest v3 FAQ <https://blog.mozilla.org/addons/2019/09/03/mozillas-manifest-v3-faq/>
-    Discussion: <https://news.ycombinator.com/item?id=20867720> | Poster: Findus23 | Score: 101
-04) Android 10 <https://www.android.com/android-10/?>
-    Discussion: <https://news.ycombinator.com/item?id=20868164> | Poster: Aissen | Score: 258
-05) A Gambler Who Cracked the Horse-Racing Code (2018) <https://www.bloomberg.com/news/features/2018-05-03/the-gambler-who-cracked-the-horse-racing-code>
-    Discussion: <https://news.ycombinator.com/item?id=20865312> | Poster: tosh | Score: 221
+01) Stripe Capital <https://stripe.com/capital>
+    166 points by jonknee | 1 hour ago | 63 comments: <https://news.ycombinator.com/item?id=20888817>
+02) An Introduction to D3.js <https://wattenberger.com/blog/d3>
+    231 points by slowhand09 | 2 hours ago | 36 comments: <https://news.ycombinator.com/item?id=20887708>
+03) Debunking the Silly “Passive [Investing] Is a Bubble” Myth <https://awealthofcommonsense.com/2019/09/debunking-the-silly-passive-is-a-bubble-myth/>
+    208 points by sharkbot | 2 hours ago | 122 comments: <https://news.ycombinator.com/item?id=20887641>
+04) Don’t force allocations on the callers of your API <https://dave.cheney.net/2019/09/05/dont-force-allocations-on-the-callers-of-your-api>
+    44 points by robfig | 1 hour ago | 23 comments: <https://news.ycombinator.com/item?id=20888238>
+05) WeWork Parent Weighs Slashing Its Valuation in Half <https://www.wsj.com/articles/wework-parent-weighs-slashing-its-valuation-roughly-in-half-11567689174?mod=rsswn>
+    215 points by jason_zig | 5 hours ago | 158 comments: <https://news.ycombinator.com/item?id=20886315>
 
 Get all news at https://news.ycombinator.com/
 ```
