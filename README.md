@@ -45,5 +45,8 @@ Get all news at https://news.ycombinator.com/
 ### Deletion
 Remove from .bashrc
 
+### Alternate Implementations
+hn.ps1 - in MS Powershell by gabrielsroka
+
 ### License
 Copyright (c) 2019 Andrew Lee (MIT License)
