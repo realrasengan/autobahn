@@ -34,6 +34,7 @@ do
   HN_ITEMS_CURRENT_DATA_POSTER=`echo $HN_ITEMS_CURRENT_DATA | jq '.by'| sed -e 's/^\"//' -e 's/\"$//'`
   HN_ITEMS_CURRENT_DATA_SCORE=`echo $HN_ITEMS_CURRENT_DATA | jq '.score'`
   HN_ITEMS_CURRENT_DATA_TIME=`echo $HN_ITEMS_CURRENT_DATA | jq '.time'`
+  HN_ITEMS_CURRENT_DATA_DESCENDANTS=`echo $HN_ITEMS_CURRENT_DATA | jq '.descendants'`
   HN_ITEMS_CURRENT_DATA_COMMENTS=`echo "https://news.ycombinator.com/item?id=$HN_ITEMS_CURRENT"`
 
   # Parse current item time
@@ -70,7 +71,7 @@ do
     else
       echo -e "$OUTPUT_COUNTER) \e[32;1m$HN_ITEMS_CURRENT_DATA_TITLE\e[32;0m"
   fi
-  echo -e "\e[33;1m    Discussion: <\e[33;4m$HN_ITEMS_CURRENT_DATA_COMMENTS\e[33;0m\e[33;1m> | Poster: $HN_ITEMS_CURRENT_DATA_POSTER | Score: $HN_ITEMS_CURRENT_DATA_SCORE | Time: $HN_ITEMS_CURRENT_DATA_TIME\e[32;0m"
+  echo -e "\e[33;1m    Discussion ($HN_ITEMS_CURRENT_DATA_DESCENDANTS): <\e[33;4m$HN_ITEMS_CURRENT_DATA_COMMENTS\e[33;0m\e[33;1m> | Poster: $HN_ITEMS_CURRENT_DATA_POSTER | Score: $HN_ITEMS_CURRENT_DATA_SCORE | Time: $HN_ITEMS_CURRENT_DATA_TIME\e[32;0m"
 
   # Increment Counter
   COUNTER=$[$COUNTER+1]
