@@ -7,7 +7,7 @@ I used to have fortune readings in my terminal, but I figured it was better if I
 to read HN headlines.
 
 This was made simply in bash so as to not require many dependencies. It also requires some
-tools found in *NIX including lc, tr, jq, curl, sed, awk, echo and bash.
+tools found in *NIX including tr, jq, curl, sed, awk, echo and bash.
 
 ### Installation
 Add to .bashrc
