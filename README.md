@@ -10,21 +10,46 @@ This was made simply in bash so as to not require many dependencies. It also req
 tools found in *NIX including tr, jq, curl, sed, awk, echo and bash.
 
 ### Installation
-Add to .bashrc
-
-Example:
+Clone autobahn
 ```
-bash ~/path/to/autobahn.sh
+git clone https://github.com/realrasengan/autobahn
+```
+
+Copy autobahn.sh new location
+```
+cd autobahn
+cp autobahn.sh ~/.autobahn.sh
+```
+
+Add to .bashrc
+```
+echo "bash ~/.autobahn.sh" >> .bashrc
+```
+
+Adding the script to crontab greatly increases the speed at which the script will run on terminal open.
+```
+crontab -l > .tmp.crontab.output
+echo "*/10 * * * * ~/.autobahn.sh" >> .tmp.crontab.output
+crontab .tmp.crontab.output
+rm .tmp.crontab.output
 ```
 
 You can also set the max # of stories to display (defaults at 10).  For example, this will
 limit it to 5:
 ```
-bash ~/path/to/autobahn.sh 5
+crontab -l > .tmp.crontab.output
+echo "*/10 * * * * ~/.autobahn.sh 5" >> .tmp.crontab.output
+crontab .tmp.crontab.output
+rm .tmp.crontab.output
+```
+Then type `source .bashrc`
+
+### Created Files
+The script will create 2 files on each run:
+```
+~/.autobahn.output ~/.autobahn.last
 ```
 
-
-Then type `source .bashrc`
 
 ### Sample Output
 ```
@@ -44,6 +69,7 @@ Get all news at https://news.ycombinator.com/
 
 ### Deletion
 Remove from .bashrc
+Remove from crontab
 
 ### Alternate Implementations
 hn.ps1 - in MS Powershell by [gabrielsroka](https://github.com/gabrielsroka)
