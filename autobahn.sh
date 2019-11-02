@@ -32,9 +32,9 @@ function populate_HN () {
       HN_ITEMS_CURRENT_DATA=`curl -H 'Cache-Control: no-cache' -s https://hacker-news.firebaseio.com/v0/item/$HN_ITEMS_CURRENT.json?print=pretty`
 
       # Parse current item json
-      HN_ITEMS_CURRENT_DATA_TITLE=`echo $HN_ITEMS_CURRENT_DATA | jq '.title' | sed -e 's/^\"//' -e 's/\"$//'`
-      HN_ITEMS_CURRENT_DATA_URL=`echo $HN_ITEMS_CURRENT_DATA | jq '.url' | sed -e 's/^\"//' -e 's/\"$//'`
-      HN_ITEMS_CURRENT_DATA_POSTER=`echo $HN_ITEMS_CURRENT_DATA | jq '.by'| sed -e 's/^\"//' -e 's/\"$//'`
+      HN_ITEMS_CURRENT_DATA_TITLE=`echo $HN_ITEMS_CURRENT_DATA | jq -r '.title'`
+      HN_ITEMS_CURRENT_DATA_URL=`echo $HN_ITEMS_CURRENT_DATA | jq -r '.url'`
+      HN_ITEMS_CURRENT_DATA_POSTER=`echo $HN_ITEMS_CURRENT_DATA | jq -r '.by'`
       HN_ITEMS_CURRENT_DATA_SCORE=`echo $HN_ITEMS_CURRENT_DATA | jq '.score'`
       HN_ITEMS_CURRENT_DATA_TIME=`echo $HN_ITEMS_CURRENT_DATA | jq '.time'`
       HN_ITEMS_CURRENT_DATA_DESCENDANTS=`echo $HN_ITEMS_CURRENT_DATA | jq '.descendants'`
