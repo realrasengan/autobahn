@@ -75,7 +75,9 @@ Remove from crontab
 Remove files with prefix ~/.autobahn.*
 
 ### Alternate Implementations
-hn.ps1 - in MS Powershell by [gabrielsroka](https://github.com/gabrielsroka)
+hn.py - in Python 3.6 + and the `requests` module
+
+hn.ps1 - in MS PowerShell by [gabrielsroka](https://github.com/gabrielsroka)
 
 ### License
 Copyright (c) 2019 Andrew Lee (MIT License)
