@@ -75,9 +75,15 @@ Remove from crontab
 Remove files with prefix ~/.autobahn.*
 
 ### Alternate Implementations
+
+Those alternate implementations do not implement everything that full script does, in particular they do not cache the
+data, so they are unusable for includision in your .bashrc (unless you are very patient...)
+
 hn.py - in Python 3.6 + and the `requests` module
 
 hn.ps1 - in MS PowerShell by [gabrielsroka](https://github.com/gabrielsroka)
+
+hn.sh - in Bash, minimal implementation
 
 ### License
 Copyright (c) 2019 Andrew Lee (MIT License)
