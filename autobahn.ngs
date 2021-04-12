@@ -1,0 +1,51 @@
+#!/usr/bin/env ngs
+
+TIMESTAMP = Time().Int()
+DATA_FILE = ENV.HOME / '.autobahn.items.json'
+
+F human_time(i) "${i/60/60} hours ago"
+F human_time(i) { guard i/60/60 < 2; "${i/60/60} hour ago" }
+F human_time(i) { guard i < 3600; "${i/60} minutes ago" }
+F human_time(i) { guard i / 60 < 2; "${i/60} minute ago" }
+
+# max - TOTAL_ITEMS
+F populate_HN(max:Int) {
+	# Get HN API Top Stories
+	# ids - HN_ITEMS_FP
+	ids = ``curl -H 'Cache-Control: no-cache' -s https://hacker-news.firebaseio.com/v0/topstories.json``
+	# i - HN_ITEMS_CURRENT
+	items = ids.limit(max).map(F(id) {
+		status("Fetching id ${id}")
+		# item - HN_ITEMS_CURRENT_DATA
+		``curl -H 'Cache-Control: no-cache' -s https://hacker-news.firebaseio.com/v0/item/${id}.json``
+	})
+	status("Storing to ${DATA_FILE}")
+	store(DATA_FILE, {
+		'timestamp': TIMESTAMP
+		'items': items
+	})
+}
+
+F display() {
+	fetch(DATA_FILE).items.each_idx_val(F(idx, item) {
+		url = " <\e[39;4m" +? item.get('url', '') +? "\e[32;0m>"
+		comments_url = "https://news.ycombinator.com/item?id=${item.id}"
+		echo("${(idx+1).Str(2, '0')}) \e[32;1m${item.title}\e[32;0m${url}")
+		echo("\e[33;1m    ${item.score} points by ${item.by} | ${human_time(TIMESTAMP-item.time)} | ${item.get('descendants', 0)} comments: <\e[33;4m${comments_url}\e[33;0m\e[33;1m>\e[32;0m")
+
+	})
+	echo("Get all news at \e[39;4mhttps://news.ycombinator.com/\e[39;0m")
+}
+
+# max - auto populated from command line argument
+F main(max:Int=10) {
+	if isatty(1) {
+		data = if File(DATA_FILE) fetch(DATA_FILE)
+		if not(data) or (data.timestamp < TIMESTAMP - 600) or (max>data.items.len()) {
+			populate_HN(max)
+		}
+		display()
+	} else {
+		populate_HN(max)
+	}
+}
